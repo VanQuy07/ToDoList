@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List - Quản Lý Công Việc</title>
+  <link rel="stylesheet" href="scripts/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">
+        Nguyễn Văn Quý - 29219024537
+        Todo List
+      </h1>
+      <p class="subtitle">Quản lý công việc của bạn một cách thông minh</p>
+    </div>
+
+    <div class="input-section">
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          id="todoInput" 
+          placeholder="Nhập công việc mới..." 
+          class="todo-input"
+        />
+        <button onclick="addTodo()" class="btn-add">
+          <span class="btn-icon">+</span>
+          Thêm
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <button class="filter-btn active" onclick="filterTasks('all')" data-filter="all">
+        Tất cả
+      </button>
+      <button class="filter-btn" onclick="filterTasks('active')" data-filter="active">
+        Chưa hoàn thành
+      </button>
+      <button class="filter-btn" onclick="filterTasks('completed')" data-filter="completed">
+        Đã hoàn thành
+      </button>
+      <div class="action-section">
+      <button onclick="deleteAllTodos()" class="btn-delete-all" title="Xóa tất cả công việc">
+        <span class="btn-icon">🗑️</span>
+        Xóa tất cả
+      </button>
+    </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stat-card">
+        <span class="stat-number" id="totalCount">0</span>
+        <span class="stat-label">Tổng số</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="activeCount">0</span>
+        <span class="stat-label">Chưa hoàn thành</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="completedCount">0</span>
+        <span class="stat-label">Đã hoàn thành</span>
+      </div>
+    </div>
+
+    <!-- <div class="action-section">
+      <button onclick="deleteAllTodos()" class="btn-delete-all" title="Xóa tất cả công việc">
+        <span class="btn-icon">🗑️</span>
+        Xóa tất cả
+      </button>
+    </div> -->
+
+    <div class="todo-section">
+      <ul id="todoList" class="todo-list"></ul>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">📝</div>
+        <p class="empty-text">Chưa có công việc nào. Hãy thêm công việc mới!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Chỉnh sửa công việc</h2>
+        <button class="modal-close" onclick="closeEditModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input 
+          type="text" 
+          id="editInput" 
+          class="todo-input"
+          placeholder="Nhập nội dung mới..."
+        />
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeEditModal()">Hủy</button>
+        <button class="btn-save" onclick="saveEdit()">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
