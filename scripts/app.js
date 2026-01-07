@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       addTodo();
     }
   });
-  
+
   // Enter key trong edit modal
   document.getElementById('editInput').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {

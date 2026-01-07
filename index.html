@@ -5,13 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List - Quản Lý Công Việc</title>
   <link rel="stylesheet" href="scripts/style.css">
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+    crossorigin=""
+  >
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-brand">Todo & Map   Nguyễn Văn Quý - 29219024537</div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Công việc</a>
+      <a href="map.html" class="nav-link">Bản đồ</a>
+    </div>
+  </nav>
+
   <div class="container">
     <div class="header">
       <h1 class="title">
-        Nguyễn Văn Quý - 29219024537
         Todo List
       </h1>
       <p class="subtitle">Quản lý công việc của bạn một cách thông minh</p>
@@ -65,14 +78,8 @@
       </div>
     </div>
 
-    <!-- <div class="action-section">
-      <button onclick="deleteAllTodos()" class="btn-delete-all" title="Xóa tất cả công việc">
-        <span class="btn-icon">🗑️</span>
-        Xóa tất cả
-      </button>
-    </div> -->
 
-    <div class="todo-section">
+    <div class="todo-section" id="todoSection">
       <ul id="todoList" class="todo-list"></ul>
       <div id="emptyState" class="empty-state">
         <div class="empty-icon">📝</div>

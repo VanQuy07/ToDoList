@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map - Todo List</title>
+  <link rel="stylesheet" href="scripts/style.css">
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+    crossorigin=""
+  >
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Todo & Map   Nguyễn Văn Quý - 29219024537</div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Công việc</a>
+      <a href="map.html" class="nav-link active">Bản đồ</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header">
+      <h1 class="title">
+        Bản đồ
+      </h1>
+      <p class="subtitle">Tìm kiếm địa điểm liên quan đến công việc bằng OpenStreetMap</p>
+    </div>
+
+    <div class="map-section" id="mapSection">
+      <div class="map-header">
+        <h2>Bản đồ</h2>
+        <p class="map-description">Nhập địa điểm để tìm kiếm và hiển thị trên bản đồ.</p>
+      </div>
+      <div class="map-controls">
+        <input 
+          type="text" 
+          id="addressInput" 
+          class="todo-input"
+          placeholder="Nhập địa điểm cần tìm..."
+        />
+        <button onclick="searchAddress()" class="btn-add map-search-btn">
+          <span class="btn-icon">🔍</span>
+          Tìm kiếm
+        </button>
+      </div>
+      <div id="map" class="map-view"></div>
+      <p id="mapStatus" class="map-status">Nhập địa điểm để tìm trên bản đồ.</p>
+    </div>
+  </div>
+
+  <div id="mapOverlay" class="map-overlay" style="display: none;">
+    <div class="map-overlay-header">
+      <span>Xem toàn màn hình</span>
+      <button class="overlay-close" onclick="closeFullMap()">✕</button>
+    </div>
+    <div id="mapFull" class="map-full-view"></div>
+  </div>
+
+  <script 
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+    integrity="sha256-o9N1j7kGStb6O5pKJg0GIrT9GL7PCZkS7N1F2A+0Xpw=" 
+    crossorigin="">
+  </script>
+  <script src="scripts/map.js"></script>
+</body>
+</html>
+
